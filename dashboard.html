@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internet Pulse</title>
+  <link rel="icon" href="icons/icon32.png">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img src="icons/icon32.png" alt="" width="22" height="22">
+      <h1>Internet Pulse</h1>
+      <span id="overall" class="pill pill-muted">Loading…</span>
+    </div>
+    <div class="controls">
+      <label>Region
+        <select id="region">
+          <option value="com">US</option>
+          <option value="co.uk">UK</option>
+          <option value="ca">Canada</option>
+        </select>
+      </label>
+      <label>Show
+        <select id="count">
+          <option value="5">Top 5</option>
+          <option value="8">Top 8</option>
+          <option value="10">Top 10</option>
+          <option value="15">Top 15</option>
+        </select>
+      </label>
+      <label>Refresh
+        <select id="interval">
+          <option value="3">3 min</option>
+          <option value="5">5 min</option>
+          <option value="10">10 min</option>
+          <option value="15">15 min</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="flaggedOnly"> Flagged only</label>
+      <button id="refresh" type="button">Refresh now</button>
+      <span id="clock" class="muted"></span>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="panel dd">
+      <div class="panel-head">
+        <h2>Most reported right now <span class="sub">Downdetector crowd reports</span></h2>
+        <span id="ddMeta" class="muted small"></span>
+      </div>
+      <div id="ddList" class="dd-list"></div>
+      <p class="note">Crowd reports are a lead, not a confirmation. "Now" is the latest 15-minute bucket; "normal" is the 24-hour median.</p>
+    </section>
+
+    <section class="panel status">
+      <div class="panel-head">
+        <h2>Official status pages <span class="sub">newest first</span></h2>
+        <span id="stMeta" class="muted small"></span>
+      </div>
+      <div id="stList" class="st-list"></div>
+    </section>
+
+    <section class="panel news">
+      <div class="panel-head">
+        <h2>Security headlines</h2>
+        <span id="nwMeta" class="muted small"></span>
+      </div>
+      <ul id="nwList" class="nw-list"></ul>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
